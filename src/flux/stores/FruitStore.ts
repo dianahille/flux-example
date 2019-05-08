@@ -18,14 +18,12 @@ class FruitStore extends ReduceStore<FruitState, FruitActions> {
     public reduce(state: any, action: any) {
         switch (action.type) {
             case 'ADD_FRUIT':
-            state.fruits.push(action.fruit);
+                const fruits = state.fruits;
+                fruits.push(action.fruit);
+                state = new FruitState(fruits);
+            break;
         }
         return state;
-    }
-
-    public getState() : any
-    {
-        return super.getState();
     }
 
 }
