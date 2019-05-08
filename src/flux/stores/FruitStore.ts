@@ -18,8 +18,7 @@ class FruitStore extends ReduceStore<FruitState, FruitActions> {
     public reduce(state: any, action: any) {
         switch (action.type) {
             case 'ADD_FRUIT':
-            // tslint:disable-next-line:no-console
-            console.log(action.type);
+            state.fruits.push(action.fruit);
         }
         return state;
     }
