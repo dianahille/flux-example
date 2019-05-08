@@ -21,10 +21,8 @@ class FruitContainerClass extends React.Component<IProps, IState> {
     }
 
     public render() {
-        // tslint:disable-next-line:no-console
-        console.log("in render" + this.state);
         // TODO: Factor out to child views
-        return <div><ul><li>4</li>
+        return <div><ul><li>{this.state.length}</li>
         </ul>
         </div>
     }
