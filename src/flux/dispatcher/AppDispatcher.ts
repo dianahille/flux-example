@@ -1,7 +1,13 @@
 import { Dispatcher } from 'flux';
 /**
  * facebook.github.io/flux: "AppDispatcher" is used to broadcast payloads to
- * registered callbacks.
+ * registered callbacks. Keep the Dispatcher as simple as possible and reuse the
+ * dispatcher instead of creating a new one every time.
+ * 
+ * The dispatcher is necessary to inform a store about called actions and let the
+ * store take the controlled about how it changes its state afterwards. To use the
+ * dispatcher you have to register the store and tell the action creator to dispatch
+ * a certain action.
  *
  * @author    Tobias Wolf <wolf@b1-systems.de>
  * @copyright 2007-2018 Horde LLC
